@@ -3,3 +3,10 @@ body
     background: #1f1f38;
     color: #fff;
 }
+#grid
+{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
