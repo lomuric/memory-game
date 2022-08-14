@@ -14,7 +14,7 @@ const cardArray = [
     },
     {
         name: 'icecream',
-        img:'images/icecream.png',
+        img:'images/ice-cream.png',
     },
     {
         name: 'milshake',
@@ -38,7 +38,7 @@ const cardArray = [
     },
     {
         name: 'icecream',
-        img:'images/icecream.png',
+        img:'images/ice-cream.png',
     },
     {
         name: 'milshake',
@@ -66,9 +66,19 @@ function createBoard () {
 }
 createBoard()
 
+function checkMatch() {
+    document.querySelectorAll('img')
+    console.log('check for a match');
+    if (cardsChosen[0] == cardsChosen[1]) {
+        alert('You found a match')
+    }
+}
+
 function flipCard(){
-    console.log('card');
     const cardId = this.getAttribute('data-id')
-    console.log(cardArray[cardId].name);
-    console.log('clicked', cardId);
+    cardsChosen.push(cardArray[cardId].name);
+    this.setAttribute('src', cardArray[cardId].img)
+    if (cardsChosen.length === 2) {
+        setTimeout( checkMatch, 500)
+    }
 }
